@@ -58,9 +58,13 @@ export default async function Navbar() {
 
                             <div className="flex items-center gap-3 pl-2 border-l border-slate-700">
                                 {fullName && (
-                                    <span className="text-xs text-slate-400 hidden sm:inline">
+                                    <Link 
+                                        href="/dashboard/perfil"
+                                        className="text-xs text-slate-300 hover:text-indigo-400 font-medium transition-colors hidden sm:inline"
+                                        title="Ir a mi perfil"
+                                    >
                                         {fullName}
-                                    </span>
+                                    </Link>
                                 )}
 
                                 <form action={handleSignOut}>

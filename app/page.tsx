@@ -6,11 +6,10 @@ export default async function Home() {
   // Se agrega 'await' para obtener la instancia del cliente de Supabase
   const supabase = await createClient();
 
-  // Consulta de mentorías activas desde Supabase
+  // Consulta de mentorías desde Supabase (sin filtro de estado estricto)
   const { data: mentorias, error } = await supabase
     .from("mentorias")
-    .select("*, profiles:mentor_id(full_name, avatar_url)")
-    .eq("estado", "activa")
+    .select("*, profiles:mentor_id(full_name)")
     .order("created_at", { ascending: false });
 
   if (error) {
