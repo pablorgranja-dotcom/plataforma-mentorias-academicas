@@ -2,6 +2,39 @@ import { createClient } from "@/lib/supabase-server"
 import { redirect } from "next/navigation"
 import { responderSolicitud, cancelarSolicitud } from "@/app/actions/mentoria-actions"
 
+// Interfaces explícitas para eliminar el uso de 'any'
+interface Profile {
+  id: string
+  full_name: string | null
+  role: string | null
+}
+
+interface Mentoria {
+  id: string
+  titulo: string
+  descripcion: string
+  mentor_id: string
+  created_at: string
+}
+
+interface Solicitud {
+  id: string
+  mentoria_id: string
+  aprendiz_id: string
+  mensaje_motivacion: string
+  estado: string
+  created_at: string
+  mentorias?: {
+    titulo: string
+    profiles?: {
+      full_name: string | null
+    } | null
+  } | null
+  profiles?: {
+    full_name: string | null
+  } | null
+}
+
 export default async function DashboardPage() {
   const supabase = await createClient()
 
@@ -14,14 +47,14 @@ export default async function DashboardPage() {
     .from("profiles")
     .select("*")
     .eq("id", user.id)
-    .single()
+    .single<Profile>()
 
   const role = profile?.role || "aprendiz"
 
-  // Variables para almacenar datos según el rol
-  let misMentorias: any[] = []
-  let solicitudesRecibidas: any[] = []
-  let misSolicitudesEnviadas: any[] = []
+  // Variables tipadas para almacenar datos según el rol
+  let misMentorias: Mentoria[] = []
+  let solicitudesRecibidas: Solicitud[] = []
+  let misSolicitudesEnviadas: Solicitud[] = []
   let totalMentorias = 0
   let totalSolicitudes = 0
 
@@ -47,8 +80,8 @@ export default async function DashboardPage() {
       solicitudesQuery
     ])
 
-    misMentorias = mentoriasRes.data || []
-    solicitudesRecibidas = solicitudesRes.data || []
+    misMentorias = (mentoriasRes.data as Mentoria[]) || []
+    solicitudesRecibidas = (solicitudesRes.data as unknown as Solicitud[]) || []
   } 
   else if (role === "administrador") {
     const totalMentoriasRes = await supabase.from("mentorias").select("*", { count: "exact", head: true })
@@ -71,7 +104,7 @@ export default async function DashboardPage() {
       .eq("aprendiz_id", user.id)
       .order("created_at", { ascending: false })
 
-    misSolicitudesEnviadas = solicitudes || []
+    misSolicitudesEnviadas = (solicitudes as unknown as Solicitud[]) || []
   }
 
   return (
