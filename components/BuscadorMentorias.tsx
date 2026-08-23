@@ -47,7 +47,7 @@ export default function BuscadorMentorias({ mentorias }: { mentorias: Mentoria[]
           placeholder="Buscar mentoría por título, descripción o tecnología..."
           value={busqueda}
           onChange={(e) => setBusqueda(e.target.value)}
-          className="w-full bg-slate-900 border border-slate-100 rounded-lg pl-10 pr-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 text-sm transition-colors"
+          className="w-full bg-slate-900 border border-slate-800 rounded-lg pl-10 pr-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 text-sm transition-colors"
         />
       </div>
 
