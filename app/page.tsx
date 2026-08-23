@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase-server";
 import GithubMentors from "@/app/components/GithubMentors";
+import BuscadorMentorias from "@/components/BuscadorMentorias";
 
 export default async function Home() {
-  // Se agrega 'await' para obtener la instancia del cliente de Supabase
   const supabase = await createClient();
 
-  // Consulta de mentorías desde Supabase (sin filtro de estado estricto)
+  // Consulta de mentorías desde Supabase
   const { data: mentorias, error } = await supabase
     .from("mentorias")
     .select("*, profiles:mentor_id(full_name)")
@@ -45,54 +45,19 @@ export default async function Home() {
           </div>
         </section>
 
-        {/* COMPONENTE DE API REST EXTERNA (Consumo vía fetch + async/await) */}
+        {/* COMPONENTE DE API REST EXTERNA */}
         <GithubMentors />
 
-        {/* Sección de Mentorías Recientes (Supabase DB) */}
+        {/* Sección de Mentorías Recientes con Filtro en Tiempo Real */}
         <section id="mentorias" className="space-y-6">
           <div className="border-b border-slate-800 pb-4">
             <h2 className="text-2xl font-bold text-white">Mentorías Recientes</h2>
             <p className="text-sm text-slate-400">
-              Explora las últimas ofertas publicadas por nuestra comunidad.
+              Explora las últimas ofertas publicadas por nuestra comunidad y filtra por título o descripción.
             </p>
           </div>
 
-          {!mentorias || mentorias.length === 0 ? (
-            <div className="p-8 text-center bg-slate-900 rounded-xl border border-slate-800 text-slate-400">
-              No hay mentorías activas en este momento.
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {mentorias.map((m) => (
-                <div
-                  key={m.id}
-                  className="p-6 bg-slate-900 rounded-xl border border-slate-800 flex flex-col justify-between hover:border-slate-700 transition-all"
-                >
-                  <div className="space-y-3">
-                    <span className="inline-block px-3 py-1 bg-blue-500/10 text-blue-400 text-xs font-semibold rounded-full border border-blue-500/20">
-                      {m.idioma_o_tecnologia}
-                    </span>
-                    <h3 className="text-xl font-bold text-white">{m.titulo}</h3>
-                    <p className="text-slate-400 text-sm line-clamp-3">
-                      {m.descripcion}
-                    </p>
-                  </div>
-
-                  <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
-                    <span>
-                      Por: {m.profiles?.full_name || "Mentor Institucional"}
-                    </span>
-                    <Link
-                      href={`/mentorias/${m.id}`}
-                      className="text-blue-400 hover:text-blue-300 font-semibold"
-                    >
-                      Ver detalle &rarr;
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
+          <BuscadorMentorias mentorias={mentorias || []} />
         </section>
       </div>
     </main>
