@@ -12,9 +12,17 @@ Una solución web full-stack diseñada para conectar a estudiantes con mentores 
 ---
 
 ## Capturas de Pantalla
-
-
-
+<img width="1110" height="999" alt="Plataforma_Vercel_registro" src="https://github.com/user-attachments/assets/589b94e2-8a34-4a8e-8a2c-8a2d659625b5" />
+<img width="1110" height="999" alt="Plataforma_Vercel_mentor3" src="https://github.com/user-attachments/assets/c80e6c25-ff81-4252-bcb4-2d8c1dde8dd2" />
+<img width="1110" height="999" alt="Plataforma_Vercel_mentor2" src="https://github.com/user-attachments/assets/b8b82c9c-c6f6-495c-8b65-fecca3815eb3" />
+<img width="1110" height="999" alt="Plataforma_Vercel_mentor1" src="https://github.com/user-attachments/assets/f9ed9e09-e3a5-4e11-a31a-42ab7ba6600d" />
+<img width="1110" height="999" alt="Plataforma_Vercel_inicio_sesión" src="https://github.com/user-attachments/assets/b4528606-5149-4345-88f3-d5c951223285" />
+<img width="1110" height="999" alt="Plataforma_Vercel_aprendiz3" src="https://github.com/user-attachments/assets/cf349525-fcbd-4bc6-b2b2-7e3e836067d2" />
+<img width="1110" height="999" alt="Plataforma_Vercel_aprendiz2" src="https://github.com/user-attachments/assets/6f12396c-e223-4b53-aa6d-1ab663a06701" />
+<img width="1110" height="999" alt="Plataforma_Vercel_aprendiz1" src="https://github.com/user-attachments/assets/77f03c19-151b-402c-bfc8-f2b456ce120d" />
+<img width="1110" height="999" alt="Plataforma_Vercel_admin2" src="https://github.com/user-attachments/assets/56ed2988-86fa-4446-8d69-050aea3e48db" />
+<img width="1110" height="999" alt="Plataforma_Vercel_admin1" src="https://github.com/user-attachments/assets/bba3dd61-77e4-4419-8e7b-3525a5748740" />
+<img width="1110" height="999" alt="Plataforma_Vercel" src="https://github.com/user-attachments/assets/77b318e9-1bbc-4974-b043-29cb392ab4ac" />
 
 ---
 
