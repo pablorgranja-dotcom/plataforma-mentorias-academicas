@@ -119,10 +119,10 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=tu_supabase_anon_key_aqui
 ## e)Credenciales de Prueba para Evaluación
 Para facilitar la revisión de los diferentes perfiles y flujos del sistema, puede utilizar las siguientes cuentas creadas en el entorno de producción:
 
-Rol	>         Correo Electrónico	>    Contraseña	>   Permisos y Acceso
-Aprendiz      aprendiz@test.com       Password123!   Explorar catálogo, enviar postulaciones y cancelar solicitudes.
-Mentor        mentor@test.com         Password123!   Publicar mentorías y aceptar/rechazar postulaciones.
-Administrador admin@test.com          Password123!   Métricas generales y gestión global de usuarios (/dashboard/usuarios).
+Rol	>_________Correo Electrónico	>____Contraseña	>___Permisos y Acceso
+Aprendiz______aprendiz@test.com_______Password123!___Explorar catálogo, enviar postulaciones y cancelar solicitudes.
+Mentor________mentor@test.com_________Password123!___Publicar mentorías y aceptar/rechazar postulaciones.
+Administrador_admin@test.com__________Password123!___Métricas generales y gestión global de usuarios (/dashboard/usuarios).
 
 Checklist de Funcionalidades Implementadas
 [ok] Autenticación y Autorización basada en Supabase Auth y Middleware de Next.js.
