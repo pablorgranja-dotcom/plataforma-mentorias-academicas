@@ -120,9 +120,9 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=tu_supabase_anon_key_aqui
 Para facilitar la revisión de los diferentes perfiles y flujos del sistema, puede utilizar las siguientes cuentas creadas en el entorno de producción:
 
 Rol	>         Correo Electrónico	>    Contraseña	>   Permisos y Acceso
-Aprendiz	     aprendiz@test.com	      Password123!	  Explorar catálogo, enviar postulaciones y cancelar solicitudes.
-Mentor	       mentor@test.com	        Password123!	  Publicar mentorías y aceptar/rechazar postulaciones.
-Administrador	admin@test.com	         Password123!	  Métricas generales y gestión global de usuarios (/dashboard/usuarios).
+Aprendiz      aprendiz@test.com       Password123!   Explorar catálogo, enviar postulaciones y cancelar solicitudes.
+Mentor        mentor@test.com         Password123!   Publicar mentorías y aceptar/rechazar postulaciones.
+Administrador admin@test.com          Password123!   Métricas generales y gestión global de usuarios (/dashboard/usuarios).
 
 Checklist de Funcionalidades Implementadas
 [ok] Autenticación y Autorización basada en Supabase Auth y Middleware de Next.js.
