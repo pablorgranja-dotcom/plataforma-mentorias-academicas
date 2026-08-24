@@ -127,7 +127,8 @@ Mentor________mentor@test.com_________Password123!___Publicar mentorías y acept
 
 Administrador_admin@test.com__________Password123!___Métricas generales y gestión global de usuarios (/dashboard/usuarios).
 
-Checklist de Funcionalidades Implementadas
+
+## Checklist de Funcionalidades Implementadas
 [ok] Autenticación y Autorización basada en Supabase Auth y Middleware de Next.js.
 
 [ok] Control de Acceso Basado en Roles (RBAC: Aprendiz, Mentor, Administrador).
